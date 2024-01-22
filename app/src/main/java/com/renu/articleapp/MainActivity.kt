@@ -44,11 +44,12 @@ class MainActivity : ComponentActivity() {
 fun Greeting(article: String, title: String, desc: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.bg_compose_background)
     Box {
-        Image(
-            painter = image,
-            contentDescription = null
-        )
+
         Column {
+            Image(
+                painter = image,
+                contentDescription = null
+            )
             Text(
                 text = article,
                 fontSize = 24.sp,
