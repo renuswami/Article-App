@@ -48,41 +48,40 @@ fun Greeting(article: String, title: String, desc: String, modifier: Modifier = 
             painter = image,
             contentDescription = null
         )
-        GreetingText(
-                article = article,
-                title = title,
-                desc = desc,
+        Column {
+            Text(
+                text = article,
+                fontSize = 24.sp,
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(100.dp)
-                    .background(color = Color.Green)
-        )
-    }
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 16.dp
+                    )
+                )
+            Text(
+                text = title,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier
+                    .padding(
+                        start = 16.dp,
+                        end = 16.dp,
+                    )
+            )
+            Text(
+                text = desc,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 16.dp
+                    )
 
-}
-
-@Composable
-fun GreetingText(article: String, title: String, desc: String, modifier: Modifier) {
-
-    Column {
-        Text(
-            text = article,
-            fontSize = 16.sp,
-            lineHeight = 24.sp,
-            textAlign = TextAlign.Center
-        )
-        Text(
-            text = title,
-            fontSize = 16.sp,
-            lineHeight = 24.sp,
-            textAlign = TextAlign.Center
-        )
-        Text(
-            text = desc,
-            fontSize = 16.sp,
-            lineHeight = 24.sp,
-            textAlign = TextAlign.Center
-        )
+            )
+        }
     }
 }
 
